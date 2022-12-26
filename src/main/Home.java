@@ -80,7 +80,9 @@ public class Home extends javax.swing.JFrame {
 
     private void menuKaryawanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuKaryawanActionPerformed
         // TODO add your handling code here:
-      
+      Karyawan karyawan = new Karyawan();
+      panelHome.add(karyawan);
+      karyawan.setVisible(true);
     }//GEN-LAST:event_menuKaryawanActionPerformed
 
     private void menuGolonganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuGolonganActionPerformed
