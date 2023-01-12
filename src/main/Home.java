@@ -1,11 +1,19 @@
 package main;
 
+import java.sql.Connection;
+import javax.swing.JOptionPane;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
+import koneksi.Koneksi;
+
 public class Home extends javax.swing.JFrame {
 
     public Home() {
         initComponents();
+        setLocationRelativeTo(this);
     }
-
+        
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -25,11 +33,11 @@ public class Home extends javax.swing.JFrame {
         panelHome.setLayout(panelHomeLayout);
         panelHomeLayout.setHorizontalGroup(
             panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1080, Short.MAX_VALUE)
         );
         panelHomeLayout.setVerticalGroup(
             panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
 
         jMenu1.setText("File");
@@ -58,6 +66,11 @@ public class Home extends javax.swing.JFrame {
         jMenu2.add(menuGolongan);
 
         menuGaji.setText("Gaji");
+        menuGaji.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuGajiActionPerformed(evt);
+            }
+        });
         jMenu2.add(menuGaji);
 
         jMenuBar1.add(jMenu2);
@@ -68,11 +81,11 @@ public class Home extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -87,8 +100,17 @@ public class Home extends javax.swing.JFrame {
 
     private void menuGolonganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuGolonganActionPerformed
         // TODO add your handling code here:
-        
+      Golongan golongan = new Golongan();
+      panelHome.add(golongan);
+      golongan.setVisible(true);
     }//GEN-LAST:event_menuGolonganActionPerformed
+
+    private void menuGajiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuGajiActionPerformed
+        // TODO add your handling code here:
+      Gaji gaji = new Gaji();
+      panelHome.add(gaji);
+      gaji.setVisible(true);
+    }//GEN-LAST:event_menuGajiActionPerformed
 
     /**
      * @param args the command line arguments
